@@ -36,7 +36,7 @@ public class Menu {
 
 	public void iniciarPrograma() {
 		do {
-			System.out.println("---menu-------------");
+			System.out.println("-------MENÚ--------");
 			System.out.println("1. Listar clientes");
 			System.out.println("2. Agregar cliente");
 			System.out.println("3. Editar clientes");
@@ -44,7 +44,7 @@ public class Menu {
 			System.out.println("5. Exportar datos");
 			System.out.println("6. Salir");
 			System.out.println("---------------");
-			System.out.print("Elija opcion: ");
+			System.out.print("Elija una opción: ");
 
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
@@ -67,7 +67,7 @@ public class Menu {
 			} else if (this.opcion == 6) {
 				this.estaAbierto = false;
 			} else {
-				System.out.println("Ingresa una opcion valida");
+				System.out.println("Ingresa una opcion válida");
 			}
 
 		} while (estaAbierto);
@@ -108,17 +108,17 @@ public class Menu {
 		do {
 			System.out.println("-------------Editar Cliente-------------");
 			System.out.println("Seleccione qué desea hacer:");
-			System.out.println("1.-Cambiar el estado del Cliente");
-			System.out.println("2.-Editar los datos ingresados del Cliente");
+			System.out.println("1.-Cambiar el estado del cliente");
+			System.out.println("2.-Editar los datos ingresados del cliente");
 			System.out.println("----------------------------------------");
-			System.out.print("Ingrese opcion:");
+			System.out.print("Ingrese una opción:");
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
 			} catch (Exception e) {
 				opcion = 0;
 			}
 			if (opcion == 0) {
-				System.out.println("Ingrese un numero");
+				System.out.println("Ingrese un nro.");
 			} else if (opcion == 1) {
 				this.editarEstadoDeCliente();
 				opcionNoValida = false;
@@ -126,7 +126,7 @@ public class Menu {
 				this.editarDatosDeCliente();
 				opcionNoValida = false;
 			} else {
-				System.out.println("Ingrese una opcion valida");
+				System.out.println("Ingrese una opción válida");
 			}
 		} while (opcionNoValida);
 	}
@@ -136,7 +136,7 @@ public class Menu {
 		Cliente clienteSeleccionado = null;
 		do {
 
-			System.out.println("Ingrese RUN del Cliente a editar:");
+			System.out.println("Ingrese RUN del cliente a editar:");
 			String rutBuscar = sc.nextLine();
 			for (Cliente cliente : clientes) {
 				if (rutBuscar.equals(cliente.getRunCliente())) {
@@ -145,7 +145,7 @@ public class Menu {
 			}
 
 			if (clienteSeleccionado == null) {
-				System.out.println("Ingrese un run valido");
+				System.out.println("Ingrese un RUN válido");
 			}
 		} while (clienteSeleccionado == null);
 
@@ -158,11 +158,11 @@ public class Menu {
 
 		boolean opcionNoValida = true;
 		do {
-			System.out.println("-----Actualizando estado del Cliente----");
+			System.out.println("-----Actualizando estado del cliente----");
 			System.out.println("El estado actual es:" + clienteSeleccionado.getCategoria());
-			System.out.println("1.-Si desea cambiar el estado del Cliente a " + contrario);
+			System.out.println("1.-Si desea cambiar el estado del cliente a " + contrario);
 			System.out.println("2.-Si desea mantener el estado del cliente en " + clienteSeleccionado.getCategoria());
-			System.out.println("Ingrese opcion:");
+			System.out.println("Ingrese una opción:");
 			System.out.println("----------------------------------------");
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
@@ -170,17 +170,17 @@ public class Menu {
 				opcion = 0;
 			}
 			if (opcion == 0) {
-				System.out.println("Ingrese un numero");
+				System.out.println("Ingrese un número");
 			} else if (opcion == 1) {
 				clienteSeleccionado.setCategoria(contrario);
 				opcionNoValida = false;
 			} else if (opcion == 2) {
 				opcionNoValida = false;
 			} else {
-				System.out.println("Ingrese una opcion valida");
+				System.out.println("Ingrese una opción válida");
 			}
 		} while (opcionNoValida);
-		System.out.println("Datos cambiados con exito");
+		System.out.println("Datos cambiados con éxito");
 	}
 
 	private void editarDatosDeCliente() {
@@ -301,16 +301,16 @@ public class Menu {
 			System.out.println("1.-Formato csv");
 			System.out.println("2.-Formato txt");
 			System.out.println();
-			System.out.print("Ingrese una opcion para exportar: ");
+			System.out.print("Ingrese una opción para exportar: ");
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
 			} catch (Exception e) {
 				opcion = 0;
-				System.out.println("Ingresa un numero!");
+				System.out.println("Ingresa un número!");
 			}
 			if (opcion != 1 && opcion != 2) {
 				opcion = 0;
-				System.out.println("Ingresa una opcion valida!");
+				System.out.println("Ingresa una opción válida!");
 			}
 			System.out.println("----------------------------------");
 		} while (opcion == 0);
