@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import modelo.CategoriaEnum;
-import modelo.CategoriaEnum.categoriaEnum;
 import modelo.Cliente;
 import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
@@ -44,7 +43,7 @@ public class Menu {
 			System.out.println("5. Exportar datos");
 			System.out.println("6. Salir");
 			System.out.println("---------------");
-			System.out.print("Elija una opción: ");
+			System.out.println("Elija una opción: ");
 
 			try {
 				opcion = Integer.parseInt(sc.nextLine());
@@ -53,7 +52,7 @@ public class Menu {
 			}
 
 			if (this.opcion == 0) {
-				System.out.println("Ingrese un numero!");
+				System.out.println("Ingrese un número!");
 			} else if (this.opcion == 1) {
 				this.listarClientes();
 			} else if (this.opcion == 2) {
@@ -94,11 +93,11 @@ public class Menu {
 		String nombre = sc.next();
 		System.out.println("Ingrese su Apellido: ");
 		String apellido = sc.next();
-		System.out.println("Ingrese los años que lleva como Cliente en nuestra pasteleria: ");
+		System.out.println("Ingrese los años que lleva como cliente en nuestra pasteleria: ");
 		int anios = sc.nextInt();
 
-		Cliente nuevoCliente = new Cliente(run, nombre, apellido, anios, categoriaEnum.ACTIVO);
-		clienteServicio.agregarCliente(nuevoCliente);
+		Cliente nuevoCliente = new Cliente(run, nombre, apellido, anios, CategoriaEnum.ACTIVO);
+		ClienteServicio.agregarCliente(nuevoCliente);
 		System.out.println("---------------------------------------");
 		System.out.println("Cliente agregado con éxito.");
 	}
@@ -149,11 +148,11 @@ public class Menu {
 			}
 		} while (clienteSeleccionado == null);
 
-		CategoriaEnum.categoriaEnum contrario;
-		if (clienteSeleccionado.getCategoria() == categoriaEnum.ACTIVO) {
-			contrario = categoriaEnum.INACTIVO;
+		CategoriaEnum contrario;
+		if (clienteSeleccionado.getCategoria() == CategoriaEnum.ACTIVO) {
+			contrario = CategoriaEnum.INACTIVO;
 		} else {
-			contrario = categoriaEnum.ACTIVO;
+			contrario = CategoriaEnum.ACTIVO;
 		}
 
 		boolean opcionNoValida = true;
@@ -202,11 +201,11 @@ public class Menu {
 		} while (clienteSeleccionado == null);
 
 		@SuppressWarnings("unused")
-		CategoriaEnum.categoriaEnum contrario;
-		if (clienteSeleccionado.getCategoria() == categoriaEnum.ACTIVO) {
-			contrario = categoriaEnum.INACTIVO;
+		CategoriaEnum contrario;
+		if (clienteSeleccionado.getCategoria() == CategoriaEnum.ACTIVO) {
+			contrario = CategoriaEnum.INACTIVO;
 		} else {
-			contrario = categoriaEnum.ACTIVO;
+			contrario = CategoriaEnum.ACTIVO;
 		}
 
 		boolean opcionNoValida = true;

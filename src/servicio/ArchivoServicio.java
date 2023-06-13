@@ -25,8 +25,8 @@ public class ArchivoServicio extends Exportador{
 			String linea;
 			while ((linea = reader.readLine()) != null) {
 				String[] data = linea.split(",");
-				CategoriaEnum.categoriaEnum cat = CategoriaEnum.categoriaEnum.ACTIVO;
-				if(data[4].equals("Inactivo")) cat = CategoriaEnum.categoriaEnum.INACTIVO;
+				CategoriaEnum cat = CategoriaEnum.ACTIVO;
+				if(data[4].equals("Inactivo")) cat = CategoriaEnum.INACTIVO;
 				Cliente cliente = new Cliente(data[0],data[1],data[2],Integer.parseInt(data[3]), cat);
 				clientes.add(cliente);
 			}

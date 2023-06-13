@@ -1,8 +1,7 @@
 package modelo;
 
-public class CategoriaEnum {
 
-	public enum categoriaEnum {
+	public enum CategoriaEnum  {
 		ACTIVO, INACTIVO
 	}
-}
+
